@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <style>
+      html, body {
+      height: 100%;
+      }
+
+      body {
+        background-image: linear-gradient(blue,yellow);
+        background-repeat: no-repeat;
+        background-attachment: fixed; 
+        background-size: 100% 100%;
+      }
+
+      .bg-image {
+        position: absolute;
+        top: 63%; /* Control vertical placment */
+        left: 40%; /* Control horizontal movement */
+        transform: translate(-50%, -50%);
+      }
+
+      p {
+        padding: 10px;
+        word-wrap: normal;
+        display: inline;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 25px;
+      }
+
+      .bg-text {
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+        color: white;
+        font-weight: bold;
+        border: 5px solid #f1f1f1;
+        position: absolute;
+        top: 13%; /* Control vertical placment */
+        left: 50%; /* Control horizontal movement */
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        width: 90%;
+        padding: 20px;
+        text-align: center;
+        position: fixed; /* Set the navbar to fixed position */
+      }
+
+      .title {
+        position: absolute;
+        top: 30%; /* Control vertical placment */
+        left: 50%; /* Control horizontal movement */
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font-family: 'Dancing Script', cursive;
+      }
+
+      .title1 {
+        position: absolute;
+        top: 95%; /* Control vertical placment */
+        left: 50%; /* Control horizontal movement */
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font-family: 'Dancing Script', cursive;
+      }
+
+      .about {
+        color: black;
+        font-weight: bold;
+        border: 5px solid #f1f1f1;
+        position: absolute;
+        top: 60%; /* Control vertical placment */
+        left: 72%; /* Control horizontal movement */
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        width: 30%;
+        height: 35%;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .audioPlayer{
+        display: block;
+        border-radius: 20px;
+        margin:0 auto;
+        position: absolute;
+        top: 110%; /* Control vertical placment */
+        left: 50%; /* Control horizontal movement */
+        transform: translate(-50%, -50%);
+      }
+
+      .audioPlayer1{
+        display: block;
+        border-radius: 20px;
+        margin:0 auto;
+        position: absolute;
+        top: 110%; /* Control vertical placment */
+        left: 25%; /* Control horizontal movement */
+        transform: translate(-50%, -50%);
+      }
+
+      .audioPlayer2{
+        display: block;
+        border-radius: 20px;
+        margin:0 auto;
+        position: absolute;
+        top: 110%; /* Control vertical placment */
+        left: 75%; /* Control horizontal movement */
+        transform: translate(-50%, -50%);
+      }
+
+      .title2 {
+        position: absolute;
+        top: 125%; /* Control vertical placment */
+        left: 50%; /* Control horizontal movement */
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font-family: 'Dancing Script', cursive;
+      }
+
+      .main{
+        position:absolute;
+        top:133%;
+        left:20%;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #474e5d;
+        font-family: Helvetica, sans-serif;
+      }
+
+      /* The actual timeline (the vertical ruler) */
+      .timeline {
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      /* The actual timeline (the vertical ruler) */
+      .timeline::after {
+        content: '';
+        position: absolute;
+        width: 6px;
+        background-color: white;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -3px;
+      }
+
+      /* Container around content */
+      .container {
+        padding: 10px 40px;
+        position: relative;
+        background-color: inherit;
+        width: 50%;
+      }
+
+      /* The circles on the timeline */
+      .container::after {
+        content: '';
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        right: -17px;
+        background-color: white;
+        border: 4px solid #FF9F55;
+        top: 15px;
+        border-radius: 50%;
+        z-index: 1;
+      }
+
+      /* Place the container to the left */
+      .left {
+        left: 0;
+      }
+
+      /* Place the container to the right */
+      .right {
+        left: 50%;
+      }
+
+      /* Add arrows to the left container (pointing right) */
+      .left::before {
+        content: " ";
+        height: 0;
+        position: absolute;
+        top: 22px;
+        width: 0;
+        z-index: 1;
+        right: 30px;
+        border: medium solid white;
+        border-width: 10px 0 10px 10px;
+        border-color: transparent transparent transparent white;
+      }
+
+      /* Add arrows to the right container (pointing left) */
+      .right::before {
+        content: " ";
+        height: 0;
+        position: absolute;
+        top: 22px;
+        width: 0;
+        z-index: 1;
+        left: 30px;
+        border: medium solid white;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+      }
+
+      /* Fix the circle for containers on the right side */
+      .right::after {
+        left: -16px;
+      }
+
+      /* The actual content */
+      .content {
+        padding: 20px 30px;
+        background-color: white;
+        position: relative;
+        border-radius: 6px;
+      }
+
+      /* Media queries - Responsive timeline on screens less than 600px wide */
+      @media screen and (max-width: 600px) {
+        /* Place the timelime to the left */
+        .timeline::after {
+        left: 31px;
+        }
+        
+        /* Full-width containers */
+        .container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+        }
+        
+        /* Make sure that all arrows are pointing leftwards */
+        .container::before {
+        left: 60px;
+        border: medium solid white;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+        }
+
+        /* Make sure all circles are at the same spot */
+        .left::after, .right::after {
+        left: 15px;
+        }
+        
+        /* Make all right containers behave like the left ones */
+        .right {
+        left: 0%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <script src="script.js"></script>
+    <div class="bg-text">
+    <nav>
+      <a href="index.html" style="text-decoration: none; color:goldenrod"><p><b>Home</b></p></a>
+      <p><b>About us</b></p>
+      <a href="performance.html" style="text-decoration: none; color:goldenrod"><p><b>Upcoming Performance</b></p></a>
+      <a href="contact.html" style="text-decoration: none; color:goldenrod"><p><b>Contact Us</b></p></a>
+    </nav>
+    </div>
+      <div class="title" style=font-size:60px;><u>About us</u></div>
+    </div>
+    <div class="bg-image">
+      <img src="classical band.jpg" height=70% width=70%></img:>
+    </div>
+    <div class="about"><h3>This band was formed in December 2003. We came from Singapore and has performed in stages throughout the world. We ought to bring out our best for you to enjoy</h3></div> 
+    <div class="title1" style=font-size:50px;><u>Audio of our past performaces</u></div>
+    <audio class='audioPlayer' controls title='Song artist/title goes here...'>
+      <source src='audio.mp3' type='audio/mpeg'>
+    </audio>
+    <audio class='audioPlayer1' controls title='Song artist/title goes here...'>
+      <source src='Kevin_MacLeod_-_Canon_in_D_Major.mp3' type='audio/mpeg'>
+    </audio>
+    <audio class='audioPlayer2' controls title='Song artist/title goes here...'>
+      <source src='Toccata-and-Fugue-in-D-minor-BWV-565.mp3' type='audio/mpeg'>
+    </audio>
+    <div class="title2" style=font-size:50px;><u>Past Major Performaces</u></div>
+    <div class="main">
+      <div class="timeline">
+        <div class="container left">
+          <div class="content">
+            <h2>2017 (Glyndebourne)</h2>
+            <p><img src="glyndebourne.jpg" width="50%" height="50%"></p>
+          </div>
+        </div>
+        <div class="container right">
+          <div class="content">
+            <h2>2016 (Vienna State Opera)</h2>
+            <p><img src="vienna-state-opera.jpg" width="50%" height="50%"></p>
+          </div>
+        </div>
+        <div class="container left">
+          <div class="content">
+            <h2>2015 (Esplanade)</h2>
+            <p><img src="esplanade.jpg" width="50%" height="50%"></p>
+          </div>
+        </div>
+        <div class="container right">
+          <div class="content">
+            <h2>2012 (Sydney opera house)</h2>
+            <p><img src="sydney-opera-house.jpg" width="50%" height="50%"></p>
+          </div>
+        </div>
+        <div class="container left">
+          <div class="content">
+            <h2>2011 (Metropolitan Opera House)</h2>
+            <p><img src="metropolitan-opera.jpg" width="50%" height="50%"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </body>
+</html>
