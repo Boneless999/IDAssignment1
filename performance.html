@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <style>
+      body {
+        background-image: url("colour background.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed; 
+        background-size: 100% 100%;
+      }
+
+      .bg-image {
+        position: absolute;
+        top: 90%; /* Control vertical placment */
+        left: 38%; /* Control horizontal movement */
+        transform: translate(-50%, -50%);
+      }
+
+      p1 {
+        padding: 10px;
+        word-wrap: normal;
+        display: inline;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 25px;
+      }
+
+      .title {
+        position: absolute;
+        top: 28%; /* Control vertical placment */
+        left: 50%; /* Control horizontal movement */
+        width: 100%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font-family: 'Dancing Script', cursive;
+      }
+
+      .bg-text {
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+        color: white;
+        font-weight: bold;
+        border: 5px solid #f1f1f1;
+        position: absolute;
+        top: 13%; /* Control vertical placment */
+        left: 50%; /* Control horizontal movement */
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        width: 90%;
+        padding: 20px;
+        text-align: center;
+        position: fixed; /* Set the navbar to fixed position */
+      }
+
+      .details {
+        color: black;
+        font-weight: bold;
+        border: 5px solid #f1f1f1;
+        position: absolute;
+        top: 90%; /* Control vertical placment */
+        left: 70%; /* Control horizontal movement */
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        width: 30%;
+        height: 80%;
+        padding: 20px;
+        text-align: left;
+      }
+
+      h1{
+        font-family: 'Dancing Script', cursive;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="script.js"></script>
+    <div class="bg-text">
+      <nav>
+        <a href="index.html" style="text-decoration: none; color:orange"><p1><b>Home</b></p1></a>
+        <a href="about.html" style="text-decoration: none; color:orange"><p1><b>About us</b></p1></a>
+        <p1><b>Upcoming Performance</b></p1>
+        <a href="contact.html" style="text-decoration: none; color:gold"><p1><b>Contact Us</b></p1></a>
+      </nav>
+    </div>
+    </div>
+      <div class="title" style=font-size:60px;><u>Our Upcoming Performance!!!</u></div>
+    </div>
+    <div class="bg-image">
+      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/e0e59957213685.56015919d35b3.jpg" width="70%" height="70%"></img:>
+    </div>
+    <div class="details">
+    <p><div>
+      <h1 style="display:inline;"><u>Location</u></h1>
+      <h2 style="display:inline;">: 6110 N.Scottscadle Road Scottsdale, AZ 85253</h2>
+    </div></p>
+
+    <p><div>
+        <h1 style="display:inline;"><u>Ticket pricing</u></h1>
+        <h2 style="display:inline;">: $15/adult $10/Student</h2>
+    </div></p>
+
+    <p><div>
+      <h1 style="display:inline;"><u>Timing</u></h1>
+      <h2 style="display:inline;">: 29th Feburary 2021 Sunday 8:00:01 pm</h2>
+    </div></p>
+
+    <p><div>
+      <h1 style="display:inline;"><u>Contact number</u></h1>
+      <h2 style="display:inline;">: 999</h2>
+    </div></p>
+  </body>
+</html>
